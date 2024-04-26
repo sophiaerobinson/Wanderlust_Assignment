@@ -1,0 +1,403 @@
+/*sophia robinson*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* period selects class
+hashtag selects ID
+nothing selects element
+*/
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+
+.montserrat-regular {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.molle-regular-italic {
+	font-family: "Molle", cursive;
+	font-weight: 400;
+	font-style: italic;
+}
+
+:root {
+	--yellow: #F6D64A;
+	--teal: #55BCD5;
+	--purple: #9B26B0;
+	--blue: #499BD2;
+	--dark-gray: #222222;
+	--light-gray: #EAEAEA;
+	--white: #FFFFFF;
+	--black: #000000;
+}
+
+li {
+	justify-content: center;
+	background-color: var(--blue);
+	color: var(--black);
+	padding: 50px 50px 50px 50px;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Molle", cursive;
+	font-weight: 800;
+	font-size: xx-large;
+	font-style: italic;
+}
+
+h4,
+p,
+q,
+small,
+nav,
+button,
+form,
+
+li {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+input[type=text], input[type=email], input[type=tel],input[type=phone] {
+    background-color: white;
+	border: 2px solid purple;
+}
+
+.radio-input {
+	accent-color: purple;
+    padding-left: 5px;
+    margin-bottom: 12px;
+}
+
+.custom-select{
+    background-color: white;
+	border: 2px solid purple;
+}
+
+submit {
+	background-color: #9B26B0;
+	color: white;
+	padding: 10px 10px 10px 10px;
+}
+
+
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#menu-toggle {
+	display: block;
+	position: relative;
+	top: 50px;
+	left: 50px;
+	z-index: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#menu-toggle a {
+	text-decoration: none;
+	color: #232323;
+	-webkit-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+
+#menu-toggle a:hover {
+	color: #4f7794;
+}
+
+
+/* The hamburger button hidden inside an input element */
+#menu-toggle input {
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -7px;
+	left: -5px;
+	padding: 0;
+	cursor: pointer;
+	opacity: 0;
+	/* hide this */
+	z-index: 2;
+	/* and place it over the hamburger */
+	-webkit-touch-callout: none;
+}
+
+#menu-toggle label {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+}
+
+#menu-toggle label span {
+	display: none;
+}
+
+/*
+   * Hamburger
+   */
+#menu-toggle label div {
+	display: block;
+	width: 30px;
+	height: 2px;
+	margin-bottom: 6px;
+	position: relative;
+	background: #cdcdcd;
+	border-radius: 3px;
+	z-index: 1;
+	-webkit-transform-origin: 4px 0px;
+	-ms-transform-origin: 4px 0px;
+	transform-origin: 4px 0px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#menu-toggle label div:first-child {
+	-webkit-transform-origin: 0% 100%;
+	-ms-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
+}
+
+#menu-toggle label div:nth-child(2) {
+	-webkit-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+/* 
+   * Change the color of the hamburger when toggled
+   */
+#menu-toggle input:checked+label div {
+	background: #232323;
+}
+
+/*
+   * Use absolute positioning to place the menu off-screen
+   */
+ul {
+	position: absolute;
+	width: 300px;
+	margin: -100px 0 0 -50px;
+	padding: 50px;
+	padding-top: 125px;
+	background: #ededed;
+	list-style-type: none;
+	/* Hide the menu off-screen to the left */
+	left: -100%;
+	-webkit-transition: left 0.3s ease;
+	-o-transition: left 0.3s ease;
+	transition: left 0.3s ease;
+}
+
+#active li {
+	padding: 10px 0;
+	font-size: 22px;
+}
+
+/*
+   * Slide the menu in from left when the input is checked
+   */
+#menu-toggle input:checked~ul {
+	left: 0;
+}
+
+#plan{
+	background-color: #F6D64A;
+}
+
+#plan section {
+	text-align: center;
+	border: 5px solid white;
+	background-color: #55BCD5;
+	width: 80%; 
+    padding: 20px 20px; 
+    border-radius: 10px; 
+    padding-bottom: 20px; 
+    box-sizing: border-box; 
+	margin: 0 auto; 
+}
+
+/* attempt at flex */
+#plan section {
+	display:flex;
+	flex-flow: row wrap;
+}
+
+#testimonials {
+	text-align: center;
+}
+
+#testimonials h4 {
+	font-weight: bold;
+	font-size: large;
+}
+
+#about {
+	background-color: #499BD2;
+}
+
+#about h4{
+	font-weight: bold;
+}
+
+#about section {
+	text-align: center;
+	width: 80%; 
+    padding: 20px 20px; 
+	margin: 0 auto; 
+}
+
+h3, h1, h2{
+	padding: 20px;
+} 
+
+body {
+	margin: 0;
+	background: linear-gradient(to bottom, var(--teal) 5px, white) 5px, white; /* Blue gradient background */
+}
