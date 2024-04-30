@@ -159,19 +159,120 @@ li {
 	font-style: normal;
 }
 
-input[type=text], input[type=email], input[type=tel],input[type=phone] {
-    background-color: white;
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=phone] {
+	background-color: white;
 	border: 2px solid purple;
 }
 
 .radio-input {
 	accent-color: purple;
-    padding-left: 5px;
-    margin-bottom: 12px;
+	padding-left: 5px;
+	margin-bottom: 12px;
 }
 
-.custom-select{
-    background-color: white;
+input {
+	font-size: 16px;
+	font-size: max(16px, 1em);
+	font-family: inherit;
+	padding: 0.25em 0.5em;
+	background-color: #fff;
+	border: 2px solid var(--purple);
+	border-radius: 4px;
+}
+
+input:not(textarea) {
+	line-height: 1;
+	height: 2.25rem;
+}
+
+textarea.input {
+	resize: vertical;
+}
+
+input[type="radio"] {
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 4.15em;
+	height: 4.15em;
+	border: 0.15em solid currentColor;
+	border-radius: 50%;
+	transform: translateY(-0.075em);
+	display: grid;
+	place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--light-gray);
+	/* Windows High Contrast Mode */
+	background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+	transform: scale(1);
+}
+
+input[type="radio"]:focus {
+	outline: max(2px, 0.15em) solid currentColor;
+	outline-offset: max(2px, 0.15em);
+}
+
+fieldset label {
+	display: flex;
+	align-items: center;
+}
+
+fieldset label span {
+	padding-right: 1em;
+}
+
+.custom-select {
+	display: block;
+}
+
+.custom-select #value {
+	font-size: 16px;
+	font-size: max(16px, 1em);
+	font-family: inherit;
+	padding: 0.25em 0.5em;
+	background-color: #fff;
+	border: 2px solid var(--purple);
+	border-radius: 4px;
+}
+
+.custom-select :not(textarea) {
+	line-height: 1;
+	height: 2.25rem;
+}
+
+
+input[type="submit"] {
+	background-color: var(--purple);
+	font-weight: bold;
+	color: var(--white);
+	padding: 1rem;
+	border: none;
+	border-radius: 3px;
+	margin-top: 1rem;
+	font-size: 1rem;
+}
+
+#destination {
+	background-color: white;
+	border: 2px solid purple;
+}
+
+#travelTime {
+	background-color: white;
 	border: 2px solid purple;
 }
 
@@ -249,6 +350,10 @@ table {
 	color: #4f7794;
 }
 
+#menu-toggle {
+	background-color: var(--yellow);
+	color: black;
+}
 
 /* The hamburger button hidden inside an input element */
 #menu-toggle input {
@@ -272,11 +377,14 @@ table {
 	display: block;
 	width: 30px;
 	height: 30px;
+	font-size: x-large;
+	font-weight: bold;
 }
 
-#menu-toggle label span {
+#menu-toggle h2 {
 	display: none;
 }
+
 
 /*
    * Hamburger
@@ -329,7 +437,7 @@ ul {
 	background: #ededed;
 	list-style-type: none;
 	/* Hide the menu off-screen to the left */
-	left: -100%;
+	left: -200%;
 	-webkit-transition: left 0.3s ease;
 	-o-transition: left 0.3s ease;
 	transition: left 0.3s ease;
@@ -347,26 +455,22 @@ ul {
 	left: 0;
 }
 
-#plan{
-	background-color: #F6D64A;
-}
-
 #plan section {
-	text-align: center;
 	border: 5px solid white;
 	background-color: #55BCD5;
-	width: 80%; 
-    padding: 20px 20px; 
-    border-radius: 10px; 
-    padding-bottom: 20px; 
-    box-sizing: border-box; 
-	margin: 0 auto; 
+	width: 80%;
+	padding: 20px 20px;
+	border-radius: 10px;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+	margin: 0 auto;
 }
 
-/* attempt at flex */
-#plan section {
-	display:flex;
-	flex-flow: row wrap;
+#plan h4 {
+	text-align: center;
+	align-items: center;
+	display: block;
+	font-weight: bold;
 }
 
 #testimonials {
@@ -382,22 +486,171 @@ ul {
 	background-color: #499BD2;
 }
 
-#about h4{
+#about h4 {
 	font-weight: bold;
 }
 
 #about section {
 	text-align: center;
-	width: 80%; 
-    padding: 20px 20px; 
-	margin: 0 auto; 
+	width: 80%;
+	padding: 20px 20px;
+	margin: 0 auto;
 }
 
-h3, h1, h2{
+h3,
+h1,
+h2 {
 	padding: 20px;
-} 
+}
 
-body {
+input {
+	display: block;
+}
+
+header {
 	margin: 0;
-	background: linear-gradient(to bottom, var(--teal) 5px, white) 5px, white; /* Blue gradient background */
+	background: linear-gradient(to bottom, var(--teal) 5px, white) 5px, white;
+}
+
+#intro p {
+	padding-left: 5%;
+}
+
+#plan {
+	background-color: #F6D64A;
+	width: 100%;
+}
+
+#plan section {
+	width: 300px;
+	height: 300px;
+}
+
+#plan div {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+#testimonials div {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+#about div {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+}
+
+#img-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	/* Two columns for larger screens */
+	grid-gap: 10px;
+	/* Adjust the gap between images */
+}
+
+#img-grid img {
+	width: 100%;
+	/* Make images fill the grid cells */
+	height: auto;
+	/* Maintain aspect ratio */
+}
+
+/* Media query for screens smaller than 500px */
+@media (max-width: 500px) {
+	#img-grid {
+		grid-template-columns: 1fr;
+		/* Single column for smaller screens */
+	}
+}
+
+@media (min-width: 1000px) {
+	#img-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	picture {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	#contact form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		/* grid-template-rows: 1fr 1fr 1fr; */
+	}
+
+	#nums fieldset {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#contact {
+		padding: 10px;
+	}
+
+	.radio-input {
+		width: 4em;
+		height: 4em;
+	}
+}
+
+
+
+#about div section {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+#about div section img {
+	width: 100%;
+	height: 100%;
+}
+
+#plan div section a {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+#plan h4 {
+	font-size: 1.5em;
+	display: inline-block;
+	padding-bottom: 15px;
+	margin: auto;
+}
+
+#about {
+	padding-bottom: 50px;
+}
+
+#testimonials {
+	padding-bottom: 30px;
+}
+
+#plan {
+	padding-bottom: 30px;
+}
+
+#plan section {
+	margin-bottom: 20px;
+}
+
+header h1 {
+	font-size: xx-large;
+	padding 15px;
+}
+
+header p {
+	font-size: larger;
+	padding-left: 15px;
+}
+
+#main-content {
+	padding-top: 60px;
+}
+
+#contact {
+	align-items: center;
+	margin-left: 100px;
 }
